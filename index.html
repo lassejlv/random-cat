@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #444;
+        color: #eee;
+        overflow: hidden;
+      }
+
+      .container img {
+        width: 100%;
+      }
+    </style>
+    <title>Random cat</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="https://cdn2.thecatapi.com/images/obRjvWv-e.jpg" />
+    </div>
+
+    <script>
+      const url = "https://api.hypll.org/api/cat";
+      const token = "61235524609728154345";
+
+      fetch(url + "?token=" + token);
+    </script>
+  </body>
+</html>
