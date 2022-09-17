@@ -10,29 +10,35 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
-        background: #444;
-        color: #eee;
+        background: #0e1524;
         overflow: hidden;
       }
-
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
       .container img {
-        width: 100%;
+        width: 35rem;
+        border-radius: 10px;
       }
     </style>
     <title>Random cat</title>
   </head>
   <body>
-    <div class="container">
-      <img src="https://cdn2.thecatapi.com/images/obRjvWv-e.jpg" />
-    </div>
-
+    <div class="container"></div>
     <script>
       const url = "https://api.hypll.org/api/cat";
       const token = "61235524609728154345";
-
-      fetch(url + "?token=" + token);
+      fetch(`${url}?token=${token}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const div = document.querySelector(".container");
+          div.innerHTML = ` <img src="${data.file}"/> `;
+        })
+        .catch((err) => console.error(err));
     </script>
   </body>
 </html>
